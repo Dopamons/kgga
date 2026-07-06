@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>괌 골프 날씨·베스트 시즌 — 한국괌골프협회(KGGA)</title>
+<meta name="description" content="괌 골프 날씨를 라운딩 지수로 정리. 오전·오후 티타임 브리핑, 16일 예보, 월별 베스트 시즌까지. 한국괌골프협회 공식.">
+
+<!-- 공유 미리보기 (Open Graph / Twitter) -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="한국괌골프협회 KGGA">
+<meta property="og:title" content="괌 골프 날씨 — 오전 티타임이 답인 날">
+<meta property="og:description" content="라운딩 지수로 보는 오늘의 괌, 16일 예보와 월별 베스트 시즌. 같이 갈 사람에게 공유하세요.">
+<meta property="og:url" content="https://kgga.co.kr/guide/weather/">
+<meta property="og:image" content="https://kgga.co.kr/img/og/guam-weather.jpg"><!-- ◍ 실촬영 OG 이미지 교체 예정 (1200x630) -->
+<meta name="twitter:card" content="summary_large_image">
+<!-- 실배포: 카카오 공유용 SDK (앱키 발급 후) -->
+<!-- <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="..." crossorigin="anonymous"></script>
+     <script>Kakao.init('YOUR_JS_APP_KEY');</script> -->
+<!-- AEO: FAQPage 구조화 데이터 (실제 삽입 예시) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"괌 골프는 몇 월이 가장 좋나요?","acceptedAnswer":{"@type":"Answer","text":"건기인 12월~5월이 베스트 시즌입니다. 바람이 잔잔하고 강수가 적어 라운딩 컨디션이 가장 좋습니다."}},
+{"@type":"Question","name":"괌 우기에도 골프를 칠 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 우기에도 대부분 오후 스콜성 소나기라, 오전 티타임을 잡으면 무리 없이 라운딩할 수 있습니다."}}
+]}
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A2E36; --ink-soft:#3C5A61; --lagoon:#16A2BC; --lagoon-deep:#0E7A90;
+    --sun:#EFB259; --sun-deep:#D9973B; --coral:#DE7E63; --mist:#EEF4F3; --card:#FFFFFF;
+    --sand:#EAE0CE; --line:#DCE6E4; --line-2:#C9D8D6; --turf:#2E7D5B; --turf-soft:#E4F0E9;
+    --idx-good:#17A2BC; --idx-ok:#D9973B; --idx-am:#5B87A3; --idx-no:#C96A5A;
+  }
+  .gw {
+    --ink: #0A2E36;
+    --ink-soft: #3C5A61;
+    --lagoon: #16A2BC;
+    --lagoon-deep: #0E7A90;
+    --sun: #EFB259;
+    --sun-deep: #D9973B;
+    --coral: #DE7E63;
+    --mist: #EEF4F3;
+    --card: #FFFFFF;
+    --sand: #EAE0CE;
+    --line: #DCE6E4;
+    --turf: #2E7D5B;      /* 골프 그린 */
+    --turf-soft: #E4F0E9;
+
+    /* 라운딩 지수 */
+    --idx-good: #17A2BC;
+    --idx-ok:   #D9973B;
+    --idx-am:   #5B87A3;
+    --idx-no:   #C96A5A;
+
+    --display: "Fraunces", "Pretendard", serif;
+    --body: "Pretendard", -apple-system, sans-serif;
+
+    font-family: var(--body); color: var(--ink); background: var(--mist);
+    line-height: 1.5; -webkit-font-smoothing: antialiased;
+    max-width: 1120px; margin: 0 auto; padding: 0 24px 64px;
+  }
+  .gw *, .gw *::before, .gw *::after { box-sizing: border-box; }
+
+  /* ---------- hero ---------- */
+  .gw-hero { padding: 56px 0 36px; border-bottom: 1px solid var(--line); }
+  .gw-eyebrow {
+    font-family: var(--display); font-size: 13px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--turf); display: flex; align-items: center; gap: 10px;
+  }
+  .gw-eyebrow::before { content: ""; width: 26px; height: 1.5px; background: var(--turf); display: inline-block; }
+  .gw-title {
+    font-family: var(--display); font-weight: 500; font-size: clamp(32px, 4.8vw, 50px);
+    line-height: 1.08; letter-spacing: -0.01em; margin: 18px 0 0;
+  }
+  .gw-title em { font-style: italic; color: var(--turf); }
+  .gw-lede { margin: 16px 0 0; max-width: 580px; font-size: 16px; color: var(--ink-soft); }
+  .gw-meta { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; color: var(--ink-soft); }
+  .gw-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .gw-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--turf); }
+
+  /* ---------- 라운딩 지수 범례 ---------- */
+  .gw-legend {
+    margin-top: 26px; background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px;
+  }
+  .gw-legend .lg-t { font-size: 13px; font-weight: 600; color: var(--ink); margin-right: 4px; }
+  .gw-legend .lg-i { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--ink-soft); }
+  .gw-legend .lg-c { width: 11px; height: 11px; border-radius: 3px; }
+  .gw-legend .lg-note { flex-basis: 100%; font-size: 12px; color: var(--ink-soft); border-top: 1px dashed var(--line); padding-top: 10px; margin-top: 2px; }
+
+  /* ---------- section frame ---------- */
+  .gw-section { padding-top: 48px; }
+  .gw-sec-num { font-family: var(--display); font-size: 13px; font-weight: 600; color: var(--turf); letter-spacing: 0.14em; }
+  .gw-sec-title { font-family: var(--display); font-weight: 500; font-size: 24px; margin: 4px 0 0; }
+  .gw-sec-sub { font-size: 14px; color: var(--ink-soft); margin: 4px 0 0; }
+
+  /* ---------- 오늘 브리핑: 오전 vs 오후 ---------- */
+  .gw-briefing { margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .gw-tee { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 24px; position: relative; overflow: hidden; }
+  .gw-tee::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; }
+  .gw-tee.am::before { background: linear-gradient(var(--sun), var(--sun-deep)); }
+  .gw-tee.pm::before { background: linear-gradient(var(--lagoon), var(--lagoon-deep)); }
+  .gw-tee-head { display: flex; align-items: center; justify-content: space-between; }
+  .gw-tee-when { font-family: var(--display); font-size: 20px; font-weight: 600; }
+  .gw-tee-when small { font-family: var(--body); font-size: 13px; color: var(--ink-soft); font-weight: 400; margin-left: 6px; }
+  .gw-verdict { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px; }
+  .gw-verdict .vd { width: 9px; height: 9px; border-radius: 50%; }
+  .gw-tee-grid { margin-top: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .gw-tv .k { font-size: 12px; color: var(--ink-soft); }
+  .gw-tv .v { font-family: var(--display); font-size: 22px; font-weight: 500; margin-top: 3px; }
+  .gw-tv .v small { font-family: var(--body); font-size: 12px; color: var(--ink-soft); }
+  .gw-tee-wind { margin-top: 18px; display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .gw-tip { grid-column: 1 / -1; margin-top: 6px; background: var(--turf-soft); border-radius: 12px; padding: 13px 16px; font-size: 13px; color: #1f5a41; display: flex; gap: 9px; }
+  .gw-tip svg { width: 17px; height: 17px; flex: none; margin-top: 1px; }
+
+  /* wind compass */
+  .wc { width: 40px; height: 40px; flex: none; }
+  .wc-lg { width: 46px; height: 46px; }
+
+  /* ---------- 16일 라운딩 예보 ---------- */
+  .gw-fc { margin-top: 22px; display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; }
+  .gw-day {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 14px 8px 14px; text-align: center;
+    display: flex; flex-direction: column; align-items: center; gap: 7px;
+    transition: transform .18s, box-shadow .18s, border-color .18s;
+  }
+  .gw-day:hover { transform: translateY(-3px); border-color: var(--turf); box-shadow: 0 10px 24px -14px rgba(10,46,54,.35); }
+  .gw-day.is-today { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+  .gw-day .d-wk { font-size: 12px; color: var(--ink-soft); min-height: 16px; }
+  .gw-day.sat .d-wk { color: var(--lagoon-deep); }
+  .gw-day.sun-day .d-wk { color: var(--coral); }
+  .gw-day .d-dt { font-family: var(--display); font-size: 15px; font-weight: 600; }
+  .gw-day .d-ic { width: 30px; height: 30px; }
+  .gw-day .d-temp { font-family: var(--display); font-size: 16px; font-weight: 600; }
+  .gw-day .d-temp small { font-family: var(--body); font-size: 11px; color: var(--ink-soft); font-weight: 400; }
+  .gw-day .d-wind { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--ink); background: var(--mist); padding: 3px 8px; border-radius: 999px; }
+  .gw-day .d-wind .wc { width: 15px; height: 15px; }
+  .gw-day .d-gust { font-size: 10px; color: var(--ink-soft); margin-top: -3px; }
+  .gw-day .d-pp { font-size: 11px; color: var(--lagoon-deep); display: inline-flex; align-items: center; gap: 3px; }
+  .gw-day .d-pp svg { width: 10px; height: 10px; }
+  .gw-idx { width: 100%; margin-top: 3px; font-size: 11px; font-weight: 600; padding: 4px 0; border-radius: 8px; }
+  .gw-todaytag { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; color: #fff; background: var(--ink); padding: 1px 6px; border-radius: 999px; }
+
+  /* ---------- 월별 골프 시즌 ---------- */
+  .gw-season-strip { margin-top: 22px; }
+  .gw-ss-months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; }
+  .gw-ss-m { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 4px 10px; text-align: center; }
+  .gw-ss-m .ss-en { font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: 0.03em; }
+  .gw-ss-m .ss-bar { height: 5px; border-radius: 3px; margin: 8px 4px 6px; }
+  .gw-ss-m .ss-rate { font-size: 10px; color: var(--ink-soft); }
+  .gw-ss-m.peak { border-color: var(--turf); box-shadow: inset 0 0 0 1px var(--turf); }
+  .gw-ss-legend { display: flex; gap: 18px; font-size: 12px; color: var(--ink-soft); margin-top: 12px; }
+  .gw-ss-legend i { display: inline-block; width: 20px; height: 5px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
+
+  /* ---------- 크로스셀 ---------- */
+  .gw-cross { margin-top: 44px; background: var(--ink); border-radius: 20px; padding: 32px; color: #fff; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+  .gw-cross h3 { font-family: var(--display); font-weight: 500; font-size: 24px; margin: 0; }
+  .gw-cross p { margin: 8px 0 0; font-size: 14px; color: #B8D0CE; max-width: 460px; }
+  .gw-cta { appearance: none; border: none; cursor: pointer; font-family: var(--body); font-size: 15px; font-weight: 600; color: var(--ink); background: var(--sun); padding: 14px 26px; border-radius: 999px; white-space: nowrap; transition: transform .18s, background .18s; }
+  .gw-cta:hover { transform: translateY(-2px); background: #F4C173; }
+
+  /* ---------- footer ---------- */
+  .gw-foot { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 12px; color: var(--ink-soft); }
+
+  .gw-reveal { opacity: 0; transform: translateY(10px); animation: gwUp .5s ease forwards; }
+  @keyframes gwUp { to { opacity: 1; transform: none; } }
+
+  @media (max-width: 860px) {
+    .gw-briefing { grid-template-columns: 1fr; }
+    .gw-fc { grid-template-columns: repeat(4, 1fr); }
+    .gw-ss-months { grid-template-columns: repeat(6, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .gw { padding: 0 16px 48px; }
+    .gw-fc { grid-template-columns: repeat(2, 1fr); }
+    .gw-tee-grid { grid-template-columns: repeat(3, 1fr); }
+    .gw-cross { padding: 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gw-reveal { animation: none; opacity: 1; transform: none; }
+    .gw-day, .gw-cta { transition: none; }
+  }
+  /* KGGA site header (weather page 래퍼 — .gw와 분리된 kg- 네임스페이스) */
+  .kg-bar{background:#0A2E36;color:#CFE0DE;font-size:12px}
+  .kg-bar .in{max-width:1120px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;justify-content:space-between}
+  .kg-head{position:sticky;top:0;z-index:50;background:rgba(238,244,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid #DCE6E4}
+  .kg-nav{max-width:1120px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between}
+  .kg-brand{display:flex;align-items:center;gap:11px}
+  .kg-brand .s{width:38px;height:38px;border-radius:50%;border:1.5px solid #A8843C;display:grid;place-items:center;color:#A8843C;font-family:"Fraunces",serif;font-weight:600;font-size:11px}
+  .kg-brand b{font-family:"Fraunces",serif;font-weight:600;font-size:17px;color:#0A2E36;letter-spacing:.02em}
+  .kg-brand span{display:block;font-size:9px;letter-spacing:.22em;color:#3C5A61;text-transform:uppercase}
+  .kg-menu{display:flex;gap:4px;align-items:center}
+  .kg-menu a{padding:9px 13px;font-size:14px;font-weight:600;color:#3C5A61;border-radius:8px}
+  .kg-menu a:hover{background:#fff;color:#0A2E36}
+  .kg-menu a.on{color:#2E7D5B}
+  .kg-cta{background:#2E7D5B;color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:700}
+  .kg-cta:hover{background:#256748}
+  .kg-cta.kg-cta-ghost{background:transparent;color:var(--ink);border:1px solid var(--line-2,#C9D8D6)}
+  .kg-cta.kg-cta-ghost:hover{background:transparent;border-color:#2E7D5B;color:#2E7D5B}
+  @media(max-width:760px){.kg-menu{display:none}}
+
+  /* ===== 기상 브리핑 헤더 (담백 · 기상청 톤) ===== */
+  .wxhero{background:linear-gradient(180deg,#FBFDFC,#F3F7F6);border-bottom:1px solid var(--line)}
+  .wxhero-in{max-width:1120px;margin:0 auto;padding:52px 24px 32px;display:grid;grid-template-columns:1.15fr .9fr;gap:52px;align-items:center}
+  .wx-eyebrow{font-family:"Fraunces",serif;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--turf);display:flex;align-items:center;gap:10px}
+  .wx-eyebrow::before{content:"";width:24px;height:1.5px;background:var(--turf)}
+  .wx-h1{font-family:"Fraunces","Pretendard",serif;font-weight:500;font-size:clamp(27px,3.6vw,41px);line-height:1.18;letter-spacing:-.01em;color:var(--ink);margin:18px 0 0;max-width:16ch}
+  .wx-h1 em{font-style:italic;color:var(--turf)}
+  .wx-lede{margin:16px 0 0;max-width:32em;font-size:15px;color:var(--ink-soft);line-height:1.65}
+  .wx-meta{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:7px 18px;font-size:12.5px;color:var(--ink-soft)}
+  .wx-meta span{position:relative;padding-left:13px}
+  .wx-meta span::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--turf)}
+  .wx-share{margin-top:24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .wx-share .ws-label{font-size:12px;color:var(--ink-soft)}
+  .ws-btn{font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;border-radius:999px;padding:10px 18px;display:inline-flex;align-items:center;gap:8px;transition:.16s;border:0}
+  .ws-btn .wsi{width:16px;height:16px}
+  .ws-btn.kakao{background:#FEE500;color:#3C1E1E}
+  .ws-btn.kakao:hover{background:#F5DC00;transform:translateY(-1px)}
+  .ws-toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-size:13px;padding:11px 20px;border-radius:999px;opacity:0;pointer-events:none;transition:.25s;z-index:200}
+  .ws-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* 데이터 카드 */
+  .wxcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:0 20px 44px -26px rgba(10,46,54,.55),0 2px 6px -3px rgba(10,46,54,.12)}
+  .wxcard-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .wc-loc{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.14em;color:var(--turf)}
+  .wc-title{font-size:15px;font-weight:700;color:var(--ink);margin-top:2px}
+  .wc-upd{font-size:11.5px;color:var(--ink-soft);text-align:right}
+  .wc-upd b{color:var(--ink);font-weight:600}
+  .wxcard-now{display:flex;align-items:center;gap:16px;padding:16px 0 14px;border-bottom:1px solid var(--line)}
+  .wc-temp{font-family:"Fraunces",serif;font-weight:600;font-size:44px;line-height:1;color:var(--ink)}
+  .wc-temp span{font-size:18px;vertical-align:super;color:var(--ink-soft)}
+  .wc-cond{font-size:15px;font-weight:600;color:var(--ink)}
+  .wc-cond small{display:block;font-size:12.5px;font-weight:400;color:var(--ink-soft);margin-top:3px}
+  .wc-idx{padding:18px 0 6px;border-bottom:1px solid var(--line)}
+  .wc-idx-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
+  .wc-idx-head>span{font-size:12.5px;color:var(--ink-soft)}
+  .wc-idx-word{font-family:"Fraunces",serif;font-size:21px;font-weight:700;line-height:1}
+  .wc-idx-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+  .wc-idx-bar .seg{position:relative;text-align:center;border-radius:8px;padding:11px 2px 9px;font-size:11px;font-weight:600;transition:transform .2s}
+  .wc-idx-bar .seg i{font-style:normal}
+  .wc-idx-bar .seg.no{background:rgba(201,106,90,.10);color:#9c4f42}
+  .wc-idx-bar .seg.am{background:rgba(91,135,163,.12);color:#3f5f74}
+  .wc-idx-bar .seg.ok{background:rgba(217,151,59,.14);color:#8a6a1f}
+  .wc-idx-bar .seg.good{background:rgba(23,162,188,.12);color:#0e7285}
+  .wc-idx-bar .seg.on{color:#fff;transform:translateY(-3px) scale(1.05);box-shadow:0 10px 20px -8px rgba(10,46,54,.5)}
+  .wc-idx-bar .seg.on.no{background:var(--idx-no)}
+  .wc-idx-bar .seg.on.am{background:var(--idx-am)}
+  .wc-idx-bar .seg.on.ok{background:var(--idx-ok)}
+  .wc-idx-bar .seg.on.good{background:var(--idx-good)}
+  .wc-idx-bar .seg.on::after{content:"오늘";position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-size:8.5px;font-weight:700;letter-spacing:.04em;color:#fff;background:var(--ink);padding:1px 7px;border-radius:999px}
+  .wc-idx-note{font-size:11px;color:var(--ink-soft);margin-top:13px}
+  .wc-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px}
+  .wc-stats>div{text-align:center;padding:11px 4px;background:var(--mist);border-radius:9px}
+  .wc-stats dt{font-size:11px;color:var(--ink-soft)}
+  .wc-stats dd{font-family:"Fraunces",serif;font-weight:600;font-size:20px;color:var(--ink);margin-top:3px}
+  .wx-legend{max-width:1120px;margin:0 auto;padding:0 24px 26px;display:flex;flex-wrap:wrap;align-items:center;gap:9px 20px}
+  .wx-legend .lg-t{font-size:12.5px;font-weight:600;color:var(--ink)}
+  .wx-legend .lg-i{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-soft)}
+  .wx-legend .lg-i i{width:10px;height:10px;border-radius:3px}
+  .wx-legend .lg-note{flex-basis:100%;font-size:11.5px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:9px;margin-top:1px}
+  @media(max-width:820px){
+    .wxhero-in{grid-template-columns:1fr;gap:26px;padding-top:34px}
+    .wxcard{max-width:460px}
+  }
+
+  /* ===== 절제된 스크롤 리빌 ===== */
+  .rv{opacity:0;transform:translateY(16px)}
+  .rv.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1)}
+
+  /* 브리핑 바 (선택 날짜) */
+  .gw-brief-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:16px;padding:12px 16px;background:#fff;border:1px solid var(--line);border-radius:12px}
+  .gw-brief-date{display:flex;align-items:baseline;gap:9px}
+  .gw-brief-date .bd-lab{font-size:11.5px;color:var(--ink-soft)}
+  .gw-brief-date b{font-family:"Fraunces",serif;font-weight:600;font-size:17px;color:var(--ink)}
+  .gw-brief-act{display:flex;align-items:center;gap:12px}
+  .gw-brief-hint{font-size:11.5px;color:var(--ink-soft)}
+  .gw-brief-share{font-family:inherit;font-size:12.5px;font-weight:700;color:#fff;background:var(--turf);border:0;border-radius:999px;padding:8px 15px;cursor:pointer;transition:.16s}
+  .gw-brief-share:hover{background:#256748;transform:translateY(-1px)}
+  .gw-briefing{transition:opacity .22s ease}
+  @media(max-width:560px){.gw-brief-hint{display:none}}
+
+  /* 예보 카드 선택 */
+  .gw-day{cursor:pointer}
+  .gw-day.is-sel{border-color:var(--turf)!important;box-shadow:inset 0 0 0 2px var(--turf),0 12px 26px -16px rgba(46,125,91,.6)!important}
+  .gw-day .d-pick{font-size:9px;font-weight:700;letter-spacing:.04em;color:var(--turf);opacity:0;transition:opacity .15s;min-height:11px}
+  .gw-day:hover .d-pick,.gw-day.is-sel .d-pick{opacity:1}
+
+  /* 히어로 로드인 + 카드 디테일 */
+  @keyframes wxIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .wxhero-copy{animation:wxIn .7s ease both}
+  .wxcard{animation:wxIn .7s .12s ease both}
+  .wc-upd .wc-live{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--turf)}
+  .wc-upd .wc-live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--turf);animation:wxPulse 2s infinite}
+  @keyframes wxPulse{0%{box-shadow:0 0 0 0 rgba(46,125,91,.5)}70%{box-shadow:0 0 0 7px rgba(46,125,91,0)}100%{box-shadow:0 0 0 0 rgba(46,125,91,0)}}
+  @keyframes segIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .wc-idx-bar{opacity:0;animation:segIn .5s ease .25s forwards}
+  .wc-stats>div{transition:transform .15s}
+  .wc-stats>div:hover{transform:translateY(-2px)}
+
+  /* 히어로 좌측 판정 배지 (앵커) */
+  .wx-verdict{display:inline-flex;align-items:center;gap:10px;margin-top:16px;padding:9px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 6px 16px -12px rgba(10,46,54,.5)}
+  .wx-verdict .wv-dot{width:10px;height:10px;border-radius:50%;background:var(--turf)}
+  .wx-verdict .wv-lab{font-size:13px;color:var(--ink-soft)}
+  .wx-verdict .wv-word{font-family:"Fraunces",serif;font-weight:700;font-size:16px;color:var(--turf)}
+
+  @media (prefers-reduced-motion: reduce){
+    .rv{opacity:1 !important;transform:none !important}
+    .wxhero-copy,.wxcard,.wc-idx-bar{animation:none;opacity:1}
+    .wc-upd .wc-live::before{animation:none}
+    .gw-briefing{transition:none}
+  }
+
+  /* ===== 모바일 네비 (kg- 헤더 공통) ===== */
+  .kgm-burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .kgm-burger span{width:24px;height:2px;background:#0A2E36;border-radius:2px}
+  @media(max-width:760px){.kgm-burger{display:flex}}
+  .kgm{display:none;position:fixed;inset:0;z-index:120;background:#EEF4F3;padding:20px;overflow:auto}
+  .kgm.open{display:block}
+  .kgm-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .kgm-top b{font-family:"Fraunces",serif;font-weight:600;color:#0A2E36;font-size:18px}
+  .kgm-x{background:none;border:0;font-size:26px;line-height:1;cursor:pointer;color:#0A2E36}
+  .kgm a{display:block;font-family:"Fraunces",serif;font-weight:600;font-size:20px;color:#0A2E36;padding:13px 4px;border-bottom:1px solid #DCE6E4}
+  .kgm a.sub{font-size:15.5px;color:#2E7D5B;padding-left:14px;font-family:"Pretendard",sans-serif}
+  .kgm a.cta{color:#2E7D5B}
+</style>
+</head>
+<body>
+<div class="kg-bar"><div class="in"><span>한국괌골프협회 · 괌 골프여행 공식 예약센터</span><span>한국어 현지지원 · 1234-5678</span></div></div>
+<header class="kg-head"><nav class="kg-nav">
+  <a class="kg-brand" href="index.html">
+    <span class="s">KGGA</span>
+    <span><b>한국괌골프협회</b></span>
+  </a>
+  <div class="kg-menu">
+    <a href="index.html">홈</a>
+    <a href="index.html#courses">골프장</a>
+    <a href="index.html#guide" class="on">괌 골프 가이드</a>
+    <a href="index.html#about">협회 소개</a>
+    <a href="index.html#qna">QnA</a>
+    <a href="#">예약확인</a>
+    <a class="kg-cta" href="/guamfree/">예약하기</a>
+  </div>
+<button class="kgm-burger" aria-label="메뉴" onclick="document.getElementById('kgm').classList.add('open')"><span></span><span></span><span></span></button></nav></header>
+<div class="kgm" id="kgm">
+  <div class="kgm-top"><b>한국괌골프협회</b><button class="kgm-x" aria-label="닫기" onclick="document.getElementById('kgm').classList.remove('open')">✕</button></div>
+  <a href="index.html" onclick="document.getElementById('kgm').classList.remove('open')">홈</a>
+  <a href="index.html#courses" onclick="document.getElementById('kgm').classList.remove('open')">골프장</a>
+  <a class="sub" href="golf.html" onclick="document.getElementById('kgm').classList.remove('open')">└ 골프장 상세</a>
+  <a href="index.html#guide" onclick="document.getElementById('kgm').classList.remove('open')">괌 골프 가이드</a>
+  <a class="sub" href="weather.html" onclick="document.getElementById('kgm').classList.remove('open')">└ 괌 날씨 · 베스트 시즌</a>
+  <a class="sub" href="hotels.html" onclick="document.getElementById('kgm').classList.remove('open')">└ 골프 연계 호텔</a>
+  <a href="index.html#about" onclick="document.getElementById('kgm').classList.remove('open')">협회 소개</a>
+  <a href="index.html#qna" onclick="document.getElementById('kgm').classList.remove('open')">QnA</a>
+  <a href="#" onclick="document.getElementById('kgm').classList.remove('open')">예약확인</a>
+  <a class="cta" href="/guamfree/">예약하기</a>
+</div>
+<!-- ================= 기상 브리핑 헤더 ================= -->
+<section class="wxhero">
+  <div class="wxhero-in">
+    <div class="wxhero-copy">
+      <p class="wx-eyebrow">한국괌골프협회 · 괌 골프 기상 브리핑</p>
+      <h1 class="wx-h1">바람 읽고, <em>티오프 시간</em>부터 고르세요.</h1>
+      <p class="wx-lede">골프에 필요한 건 비 아이콘이 아니라 바람과 타이밍입니다. 풍속·돌풍·강수 시간대를 묶어 <b>라운딩 지수</b>로 정리했습니다. 괌은 소나기가 주로 오후라, 오전 티타임이 답인 날이 많습니다.</p>
+      <div class="wx-meta">
+        <span>무역풍 NE 상시 · 노트(kt) 표기</span>
+        <span>일출 06:05 · 얼리버드 가능</span>
+        <span>괌 현지 시각 기준</span>
+      </div>
+      <div class="wx-share">
+        <span class="ws-label">이 정보 공유</span>
+        <button class="ws-btn kakao" data-share="kakao"><svg class="wsi" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 3 6.3 3 10.3c0 2.6 1.7 4.8 4.3 6.1-.2.7-.7 2.4-.8 2.8 0 .2.1.4.4.2.2-.1 2.6-1.8 3.7-2.5.5.1.9.1 1.4.1 5.1 0 9-3.3 9-7.3S17.1 3 12 3z"/></svg>카카오톡 공유</button>
+      </div>
+    </div>
+
+    <aside class="wxcard">
+      <div class="wxcard-top">
+        <div><div class="wc-loc">GUAM · TUMON</div><div class="wc-title">지금 괌 골프 날씨</div></div>
+        <div class="wc-upd"><span class="wc-live">LIVE</span><br>발표 <b id="wxUpd">오늘 09:00</b></div>
+      </div>
+      <div class="wxcard-now">
+        <div class="wc-temp"><span id="wcTempNum">29</span><span>°C</span></div>
+        <div class="wc-cond">대체로 맑음<small>오전 라운딩 양호 · 오후 소나기 주의</small></div>
+      </div>
+      <div class="wc-idx">
+        <div class="wc-idx-head"><span>오늘 라운딩 지수 <em style="font-style:normal;color:var(--ink-soft)">· 오전 기준</em></span><b class="wc-idx-word" id="wxIdxWord">—</b></div>
+        <div class="wc-idx-bar" id="wxIdxBar">
+          <span class="seg no"><i>비추천</i></span>
+          <span class="seg am"><i>오전권장</i></span>
+          <span class="seg ok"><i>무난</i></span>
+          <span class="seg good"><i>최적</i></span>
+        </div>
+        <div class="wc-idx-note">오전(06–12시) 조건 기준 · 돌풍·강수·체감 종합 판정</div>
+      </div>
+      <dl class="wc-stats">
+        <div><dt>체감</dt><dd>31°</dd></div>
+        <div><dt>강수확률</dt><dd>15%</dd></div>
+        <div><dt>바람</dt><dd>NE 9</dd></div>
+        <div><dt>자외선</dt><dd>8</dd></div>
+      </dl>
+    </aside>
+  </div>
+
+  <div class="wx-legend">
+    <span class="lg-t">지수 기준</span>
+    <span class="lg-i"><i style="background:var(--idx-good)"></i>최적</span>
+    <span class="lg-i"><i style="background:var(--idx-ok)"></i>무난</span>
+    <span class="lg-i"><i style="background:var(--idx-am)"></i>오전 권장</span>
+    <span class="lg-i"><i style="background:var(--idx-no)"></i>비추천</span>
+    <span class="lg-note">돌풍 22kt↑ 또는 강수 70%↑는 비추천 · 오후 소나기 예상일은 오전 권장 · 돌풍 14kt↓ + 강수 35%↓면 최적으로 판정합니다.</span>
+  </div>
+</section>
+
+<div class="gw">
+
+  <!-- ================= SECTION 1 : 오늘 브리핑 ================= -->
+  <section class="gw-section">
+    <span class="gw-sec-num">01 — 라운딩 브리핑</span>
+    <h2 class="gw-sec-title">오전 vs 오후, 언제 나갈까</h2>
+    <div class="gw-brief-bar">
+      <div class="gw-brief-date"><span class="bd-lab">선택한 날</span><b id="briefDate">오늘</b></div>
+      <div class="gw-brief-act">
+        <span class="gw-brief-hint">↓ 16일 예보에서 날짜를 누르면 이 브리핑이 바뀝니다</span>
+        <button class="gw-brief-share" id="briefShare" type="button">이 날짜 공유</button>
+      </div>
+    </div>
+    <div class="gw-briefing" id="gwBriefing"></div>
+  </section>
+
+  <!-- ================= SECTION 2 : 16일 예보 ================= -->
+  <section class="gw-section">
+    <span class="gw-sec-num">02 — 16일 라운딩 예보</span>
+    <h2 class="gw-sec-title">라운딩 날 잡기</h2>
+    <p class="gw-sec-sub">날짜를 누르면 위 <b>라운딩 브리핑</b>이 그 날짜의 오전·오후로 바뀝니다. 골프팀 날 잡을 때 바로 공유하세요.</p>
+    <div class="gw-fc" id="gwForecast"></div>
+  </section>
+
+  <!-- ================= SECTION 3 : 월별 골프 시즌 ================= -->
+  <section class="gw-section">
+    <span class="gw-sec-num">03 — 월별 골프 시즌</span>
+    <h2 class="gw-sec-title">언제 가면 제일 좋을까</h2>
+    <p class="gw-sec-sub">건기(12~5월)는 바람 잔잔하고 비 적은 골프 성수기, 우기는 오전 라운딩 위주로 계획하세요.</p>
+    <div class="gw-season-strip">
+      <div class="gw-ss-months" id="gwSeasonStrip"></div>
+      <div class="gw-ss-legend">
+        <span><i style="background:var(--turf)"></i>골프 최적</span>
+        <span><i style="background:var(--sun)"></i>무난</span>
+        <span><i style="background:var(--lagoon)"></i>오전 권장</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 크로스셀 ================= -->
+  <div class="gw-cross">
+    <div>
+      <h3>협회 예약가로 티타임 잡기</h3>
+      <p>날씨 좋은 시즌은 티타임이 빨리 찹니다. 한국괌골프협회가 괌 골프장 5곳을 협회 예약가로 안내하고, 오전 라운딩 우선 배정도 도와드립니다.</p>
+    </div>
+    <a class="gw-cta" href="index.html" style="text-decoration:none;display:inline-block">골프장 예약하기</a>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="gw-foot">
+    <span>데이터: Open-Meteo · 괌 현지 시각 기준 · 갱신 <span id="gwUpdated"></span></span>
+    <span>라운딩 지수는 참고용 판정이며 현장 상황과 다를 수 있습니다.</span>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  /* =========================================================
+     ↓↓↓ 목업용 예시 데이터 — 실서비스에선 Open-Meteo 캐시값으로 교체 ↓↓↓
+     호출 변수 예:
+       &hourly=temperature_2m,apparent_temperature,precipitation_probability,wind_speed_10m,wind_gusts_10m,wind_direction_10m,uv_index
+       &daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,uv_index_max
+       &wind_speed_unit=kn&timezone=Pacific/Guam
+     ========================================================= */
+
+  // [오늘 브리핑] 오전(06-12) / 오후(12-18) 집계 예시
+  var BRIEF = {
+    am: { wind:9,  gust:13, dir:"NE", deg:45, precip:15, feels:31, uv:8  },
+    pm: { wind:13, gust:18, dir:"E",  deg:90, precip:55, feels:35, uv:11 }
+  };
+
+  // [16일 예보] 7월 우기 패턴 예시 (풍속/돌풍 kt)
+  var FC = [
+    {d:4,  wk:6, ic:"partly",  hi:31, lo:25, wind:11, gust:16, dir:"E",   deg:90,  precip:40, pm:true,  feels:34},
+    {d:5,  wk:0, ic:"showers", hi:30, lo:25, wind:9,  gust:13, dir:"NE",  deg:45,  precip:55, pm:true,  feels:35},
+    {d:6,  wk:1, ic:"storm",   hi:30, lo:25, wind:14, gust:20, dir:"NE",  deg:45,  precip:70, pm:true,  feels:35},
+    {d:7,  wk:2, ic:"showers", hi:31, lo:25, wind:12, gust:17, dir:"E",   deg:90,  precip:50, pm:true,  feels:35},
+    {d:8,  wk:3, ic:"partly",  hi:31, lo:26, wind:10, gust:14, dir:"ENE", deg:67,  precip:35, pm:true,  feels:34},
+    {d:9,  wk:4, ic:"sunny",   hi:32, lo:26, wind:8,  gust:12, dir:"NE",  deg:45,  precip:30, pm:false, feels:33},
+    {d:10, wk:5, ic:"showers", hi:31, lo:25, wind:13, gust:18, dir:"E",   deg:90,  precip:55, pm:true,  feels:35},
+    {d:11, wk:6, ic:"storm",   hi:30, lo:25, wind:15, gust:23, dir:"NE",  deg:45,  precip:60, pm:true,  feels:35},
+    {d:12, wk:0, ic:"storm",   hi:30, lo:24, wind:12, gust:19, dir:"NE",  deg:45,  precip:70, pm:true,  feels:34},
+    {d:13, wk:1, ic:"showers", hi:31, lo:25, wind:11, gust:16, dir:"ENE", deg:67,  precip:50, pm:true,  feels:35},
+    {d:14, wk:2, ic:"partly",  hi:31, lo:26, wind:9,  gust:13, dir:"E",   deg:90,  precip:35, pm:false, feels:34},
+    {d:15, wk:3, ic:"sunny",   hi:32, lo:26, wind:7,  gust:11, dir:"NE",  deg:45,  precip:25, pm:false, feels:33},
+    {d:16, wk:4, ic:"partly",  hi:31, lo:26, wind:10, gust:15, dir:"NE",  deg:45,  precip:40, pm:true,  feels:34},
+    {d:17, wk:5, ic:"showers", hi:30, lo:25, wind:12, gust:18, dir:"E",   deg:90,  precip:55, pm:true,  feels:35},
+    {d:18, wk:6, ic:"showers", hi:30, lo:25, wind:13, gust:19, dir:"NE",  deg:45,  precip:60, pm:true,  feels:35},
+    {d:19, wk:0, ic:"showers", hi:31, lo:25, wind:11, gust:16, dir:"NE",  deg:45,  precip:50, pm:true,  feels:35}
+  ];
+  var MONTH_LABEL = "7월";
+
+  // [월별 골프 시즌] 예시 (rate: peak/ok/am)
+  var SEASON = [
+    {en:"JAN", rate:"peak"}, {en:"FEB", rate:"peak"}, {en:"MAR", rate:"peak"}, {en:"APR", rate:"peak"},
+    {en:"MAY", rate:"ok"},   {en:"JUN", rate:"ok"},   {en:"JUL", rate:"am"},   {en:"AUG", rate:"am"},
+    {en:"SEP", rate:"am"},   {en:"OCT", rate:"am"},   {en:"NOV", rate:"ok"},   {en:"DEC", rate:"peak"}
+  ];
+  var CURRENT_MONTH = 6; // 0=1월 … 6=7월
+
+  /* ---------- 라운딩 지수 로직 (v1) ---------- */
+  function roundingIndex(x){
+    if(x.gust >= 22 || x.precip >= 70) return "no";       // 비추천
+    if(x.pm && x.precip >= 45) return "am";               // 오후 소나기 → 오전 권장
+    if(x.feels >= 35) return "am";                         // 오후 폭염 → 오전 권장
+    if(x.gust <= 14 && x.precip <= 35) return "good";      // 최적
+    return "ok";                                           // 무난
+  }
+  var IDX_META = {
+    good: {label:"최적",     c:"var(--idx-good)", bg:"rgba(23,162,188,.12)"},
+    ok:   {label:"무난",     c:"var(--idx-ok)",   bg:"rgba(217,151,59,.14)"},
+    am:   {label:"오전 권장", c:"var(--idx-am)",   bg:"rgba(91,135,163,.16)"},
+    no:   {label:"비추천",   c:"var(--idx-no)",   bg:"rgba(201,106,90,.14)"}
+  };
+
+  /* ---------- 아이콘 ---------- */
+  var ICONS = {
+    sunny:'<svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="8" fill="#EFB259"/><g stroke="#EFB259" stroke-width="2.4" stroke-linecap="round"><path d="M20 4v5M20 31v5M4 20h5M31 20h5M8.5 8.5l3.5 3.5M28 28l3.5 3.5M31.5 8.5L28 12M12 28l-3.5 3.5"/></g></svg>',
+    partly:'<svg viewBox="0 0 40 40" fill="none"><circle cx="15" cy="15" r="6" fill="#EFB259"/><g stroke="#EFB259" stroke-width="2" stroke-linecap="round"><path d="M15 4v3M4 15h3M7.5 7.5l2 2M22.5 7.5l-2 2"/></g><path d="M14 27a6 6 0 0 1 .8-11.9 8 8 0 0 1 15.5 2A5 5 0 0 1 30 27z" fill="#CDDDDC" stroke="#9FBCBB" stroke-width="1.5"/></svg>',
+    showers:'<svg viewBox="0 0 40 40" fill="none"><path d="M12 24a6 6 0 0 1 .8-11.9 8 8 0 0 1 15.5 2A5 5 0 0 1 28 24z" fill="#CDDDDC" stroke="#9FBCBB" stroke-width="1.6"/><g stroke="#16A2BC" stroke-width="2.2" stroke-linecap="round"><path d="M15 28l-1.5 4M21 28l-1.5 4M27 28l-1.5 4"/></g></svg>',
+    storm:'<svg viewBox="0 0 40 40" fill="none"><path d="M12 22a6 6 0 0 1 .8-11.9 8 8 0 0 1 15.5 2A5 5 0 0 1 28 22z" fill="#B9CFCE" stroke="#7FA3A2" stroke-width="1.6"/><path d="M20 24l-4 6h4l-1.5 5 5-7h-4z" fill="#EFB259" stroke="#D9973B" stroke-width="1"/></svg>'
+  };
+  var dropSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z"/></svg>';
+  var WK = ["일","월","화","수","목","금","토"];
+
+  // 바람 나침반 (deg = 바람이 불어오는 방향)
+  function compass(deg, cls){
+    return '<svg class="wc'+(cls?' '+cls:'')+'" viewBox="0 0 40 40" fill="none">'+
+      '<circle cx="20" cy="20" r="16" stroke="#C9D8D6" stroke-width="1.5"/>'+
+      '<text x="20" y="9" text-anchor="middle" font-size="7" fill="#7A9391" font-family="sans-serif">N</text>'+
+      '<g transform="rotate('+deg+' 20 20)">'+
+        '<path d="M20 8 L24 22 L20 19 L16 22 Z" fill="#2E7D5B"/>'+
+      '</g></svg>';
+  }
+
+  /* ---------- 브리핑 (선택 날짜 대응) ---------- */
+  var briefEl = document.getElementById("gwBriefing");
+  var reduceM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function windows(day){
+    return {
+      am:{wind:Math.max(4,day.wind-2), gust:Math.max(8,day.gust-3), dir:day.dir, deg:day.deg,
+          precip:Math.max(5,Math.round(day.precip*(day.pm?0.4:0.8))), feels:Math.max(29,day.feels-3), uv:Math.max(6,Math.min(11,day.hi-24))},
+      pm:{wind:day.wind+2, gust:day.gust+2, dir:day.dir, deg:day.deg,
+          precip:Math.min(92,Math.round(day.precip*(day.pm?1.05:0.95))), feels:day.feels+(day.pm?1:0), uv:Math.min(12,Math.max(9,day.hi-21))}
+    };
+  }
+  function briefFor(i){ return (i===0) ? {am:BRIEF.am, pm:BRIEF.pm} : windows(FC[i]); }
+
+  function teeCard(slot,label,time,x,pm){
+    var m = IDX_META[roundingIndex({gust:x.gust,precip:x.precip,feels:x.feels,pm:pm})];
+    return '<div class="gw-tee '+slot+'">'+
+      '<div class="gw-tee-head"><div class="gw-tee-when">'+label+' 라운딩<small>'+time+'</small></div>'+
+      '<span class="gw-verdict" style="color:'+m.c+';background:'+m.bg+'"><span class="vd" style="background:'+m.c+'"></span>'+m.label+'</span></div>'+
+      '<div class="gw-tee-grid">'+
+        '<div class="gw-tv"><div class="k">체감</div><div class="v">'+x.feels+'<small>°</small></div></div>'+
+        '<div class="gw-tv"><div class="k">강수확률</div><div class="v">'+x.precip+'<small>%</small></div></div>'+
+        '<div class="gw-tv"><div class="k">자외선</div><div class="v">'+x.uv+'</div></div>'+
+      '</div>'+
+      '<div class="gw-tee-wind">'+compass(x.deg,"wc-lg")+
+        '<div><div class="k" style="font-size:12px;color:var(--ink-soft)">바람 '+x.dir+'</div>'+
+        '<div style="font-family:var(--display);font-size:18px;font-weight:600">'+x.wind+' <small style="font-family:var(--body);font-size:12px;color:var(--ink-soft)">kt · 돌풍 '+x.gust+'kt</small></div></div>'+
+      '</div></div>';
+  }
+  function tipLine(w){
+    var amv = roundingIndex({gust:w.am.gust,precip:w.am.precip,feels:w.am.feels,pm:false});
+    var pmv = roundingIndex({gust:w.pm.gust,precip:w.pm.precip,feels:w.pm.feels,pm:true});
+    var msg;
+    if(pmv==="no") msg="오후는 돌풍·강수로 라운딩이 어렵습니다. <b>오전 티타임을 권장</b>합니다.";
+    else if(pmv==="am") msg="오후에 소나기·더위 부담이 커집니다. <b>오전 티타임을 권장</b>합니다.";
+    else if(amv==="good"&&pmv==="good") msg="하루 종일 컨디션이 좋습니다. <b>오전·오후 모두 무난</b>합니다.";
+    else msg="무난한 날입니다. 바람은 무역풍 계열이라 티샷 방향만 참고하면 됩니다.";
+    return '<div class="gw-tip"><svg viewBox="0 0 24 24" fill="none" stroke="#2E7D5B" stroke-width="2"><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/><path d="M9 21h6" stroke-linecap="round"/></svg><span>'+msg+'</span></div>';
+  }
+  function briefHTML(i){ var w=briefFor(i); return teeCard("am","오전","06:00–12:00",w.am,false)+teeCard("pm","오후","12:00–18:00",w.pm,true)+tipLine(w); }
+  function renderBrief(i){
+    if(reduceM){ briefEl.innerHTML = briefHTML(i); return; }
+    briefEl.style.opacity = 0;
+    setTimeout(function(){ briefEl.innerHTML = briefHTML(i); briefEl.style.opacity = 1; }, 170);
+  }
+
+  /* ---------- 16일 예보 (클릭 → 브리핑 교체) ---------- */
+  var fcEl = document.getElementById("gwForecast");
+  var dateEl = document.getElementById("briefDate");
+  var selIdx = 0;
+  function dateLabel(i){ var day=FC[i]; return (i===0?"오늘 · ":"")+MONTH_LABEL+" "+day.d+"일 ("+WK[day.wk]+")"; }
+  function selectDay(i){
+    selIdx = i;
+    var cards = fcEl.querySelectorAll(".gw-day");
+    for(var k=0;k<cards.length;k++){ cards[k].classList.toggle("is-sel", k===i); }
+    dateEl.textContent = dateLabel(i);
+    renderBrief(i);
+    briefEl.scrollIntoView({behavior: reduceM?"auto":"smooth", block:"center"});
+  }
+  FC.forEach(function(day, idx){
+    var m = IDX_META[roundingIndex(day)];
+    var el = document.createElement("div");
+    el.className = "gw-day" + (idx===0?" is-today is-sel":"") + (day.wk===6?" sat":"") + (day.wk===0?" sun-day":"");
+    el.innerHTML =
+      '<span class="d-wk">'+(idx===0?'<span class="gw-todaytag">오늘</span>':WK[day.wk])+'</span>'+
+      '<span class="d-dt">'+MONTH_LABEL+' '+day.d+'</span>'+
+      '<span class="d-ic">'+ICONS[day.ic]+'</span>'+
+      '<span class="d-temp">'+day.hi+'° <small>/ '+day.lo+'°</small></span>'+
+      '<span class="d-wind">'+compass(day.deg)+day.dir+' '+day.wind+'kt</span>'+
+      '<span class="d-gust">돌풍 '+day.gust+'kt</span>'+
+      '<span class="d-pp">'+dropSvg+day.precip+'%'+(day.pm?' 오후':'')+'</span>'+
+      '<span class="gw-idx" style="color:'+m.c+';background:'+m.bg+'">'+m.label+'</span>'+
+      '<span class="d-pick">이 날 브리핑 ↑</span>';
+    el.addEventListener("click", function(){ selectDay(idx); });
+    fcEl.appendChild(el);
+  });
+
+  // 초기 브리핑 = 오늘 (페이드 없이)
+  dateEl.textContent = dateLabel(0);
+  briefEl.innerHTML = briefHTML(0);
+
+  // 이 날짜 공유
+  (function(){
+    var btn = document.getElementById("briefShare"); if(!btn) return;
+    function toast(msg){
+      var t=document.getElementById("wsToast");
+      if(!t){ t=document.createElement("div"); t.id="wsToast"; t.className="ws-toast"; document.body.appendChild(t); }
+      t.textContent=msg; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(function(){ t.classList.remove("show"); },2200);
+    }
+    btn.addEventListener("click", function(){
+      var day=FC[selIdx], w=briefFor(selIdx);
+      var amL=IDX_META[roundingIndex({gust:w.am.gust,precip:w.am.precip,feels:w.am.feels,pm:false})].label;
+      var label=MONTH_LABEL+" "+day.d+"일("+WK[day.wk]+") 괌 오전 라운딩 "+amL;
+      var url=location.origin+location.pathname+"?date="+day.d;
+      if(navigator.clipboard){ navigator.clipboard.writeText(label+" — "+url).then(function(){ toast(label+" · 링크 복사됨"); }, function(){ toast(label); }); }
+      else { toast(label); }
+    });
+  })();
+
+  // 온도 카운트업 (히어로)
+  (function(){
+    var el=document.getElementById("wcTempNum"); if(!el) return;
+    var target=parseInt(el.textContent,10)||29;
+    if(reduceM){ el.textContent=target; return; }
+    var start=null;
+    function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/900,1); el.textContent=Math.round(target*(0.3+0.7*p)); if(p<1)requestAnimationFrame(step); else el.textContent=target; }
+    requestAnimationFrame(step);
+  })();
+
+  /* ---------- 월별 골프 시즌 ---------- */
+  var ssEl = document.getElementById("gwSeasonStrip");
+  var RATE_COLOR = { peak:"var(--turf)", ok:"var(--sun)", am:"var(--lagoon)" };
+  var RATE_LABEL = { peak:"최적", ok:"무난", am:"오전권장" };
+  SEASON.forEach(function(m, i){
+    var el = document.createElement("div");
+    el.className = "gw-ss-m" + (i===CURRENT_MONTH?" peak":"");
+    el.innerHTML = '<div class="ss-en">'+m.en+'</div>'+
+      '<div class="ss-bar" style="background:'+RATE_COLOR[m.rate]+'"></div>'+
+      '<div class="ss-rate">'+RATE_LABEL[m.rate]+'</div>';
+    ssEl.appendChild(el);
+  });
+
+  document.getElementById("gwUpdated").textContent = "오늘 09:00";
+
+  /* ========== 라운딩 지수 등급 바 + 판정 배지 (오전 기준) ========== */
+  (function(){
+    var amIdx = roundingIndex({gust:BRIEF.am.gust, precip:BRIEF.am.precip, feels:BRIEF.am.feels, pm:false});
+    var meta = IDX_META[amIdx];
+    var word = document.getElementById("wxIdxWord");
+    if(word){ word.textContent = meta.label; word.style.color = meta.c; }
+    var seg = document.querySelector("#wxIdxBar .seg." + amIdx);
+    if(seg){ seg.classList.add("on"); }
+    var vw = document.getElementById("wxVerdictWord"), vd = document.getElementById("wxVDot");
+    if(vw){ vw.textContent = meta.label; vw.style.color = meta.c; }
+    if(vd){ vd.style.background = meta.c; }
+  })();
+
+  /* ========== 공유 (카톡·링크복사·밴드) ========== */
+  (function(){
+    function toast(msg){
+      var t = document.getElementById("wsToast");
+      if(!t){ t = document.createElement("div"); t.id="wsToast"; t.className="ws-toast"; document.body.appendChild(t); }
+      t.textContent = msg; t.classList.add("show");
+      clearTimeout(t._h); t._h = setTimeout(function(){ t.classList.remove("show"); }, 2000);
+    }
+    var url = location.href, title = "괌 골프 날씨 · 베스트 시즌 — 한국괌골프협회(KGGA)";
+    document.querySelectorAll("[data-share]").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var k = btn.getAttribute("data-share");
+        if(k === "copy"){
+          if(navigator.clipboard){ navigator.clipboard.writeText(url).then(function(){ toast("링크가 복사되었습니다"); }, function(){ toast("복사에 실패했습니다"); }); }
+          else { toast("링크: " + url); }
+        } else if(k === "kakao"){
+          if(window.Kakao && window.Kakao.Share){ /* 실배포: Kakao.Share.sendDefault({...}) */ }
+          else { toast("카카오톡 공유 — 실배포 시 앱키 연동"); }
+        } else if(k === "band"){
+          window.open("https://band.us/plugin/share?body=" + encodeURIComponent(title + " " + url) + "&route=" + encodeURIComponent(url), "_blank", "noopener,width=600,height=520");
+        }
+      });
+    });
+  })();
+
+  /* ========== 절제된 스크롤 리빌 ========== */
+  (function(){
+    if(!("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, {threshold:.12, rootMargin:"0px 0px -40px 0px"});
+    document.querySelectorAll(".gw-section, .gw-cross").forEach(function(el){ el.classList.add("rv"); io.observe(el); });
+  })();
+
+})();
+</script>
+</body>
+</html>
