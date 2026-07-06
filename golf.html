@@ -61,9 +61,9 @@
   .c-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
   .c-chips span{font-size:12.5px;font-weight:600;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:6px 11px;border-radius:8px}
 
-  .c-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;margin-top:18px}
+  .c-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,0.9fr);gap:18px;margin-top:18px}
   @media(max-width:820px){.c-grid{grid-template-columns:1fr}}
-  .panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;min-width:0}
   .panel h3{font-family:var(--display);font-weight:600;font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
   .panel h3::before{content:"";width:16px;height:2px;background:var(--turf)}
 
@@ -73,8 +73,8 @@
   .feat li b{color:var(--ink);font-weight:600}
 
   .spec{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;font-size:13.5px}
-  .spec dt{color:var(--turf);font-weight:600}
-  .spec dd{color:var(--ink)}
+  .spec dt{color:var(--turf);font-weight:600;white-space:nowrap}
+  .spec dd{color:var(--ink);word-break:keep-all;overflow-wrap:anywhere}
 
   .amen{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
   .amen .a{font-size:12.5px;font-weight:600;padding:7px 12px;border-radius:9px;display:inline-flex;align-items:center;gap:7px}
@@ -133,8 +133,8 @@
     <a href="index.html">홈</a>
     <a href="index.html#courses" class="on">골프장</a>
     <a href="index.html#guide">괌 골프 가이드</a>
-    <a href="index.html#about">협회 소개</a>
-    <a href="index.html#qna">QnA</a>
+    <a href="about.html">협회 소개</a>
+    <a href="qna.html">QnA</a>
     <a href="#">예약확인</a>
     <a class="kg-cta" href="/guamfree/">예약하기</a>
   </div>
@@ -147,8 +147,8 @@
   <a href="index.html#guide" onclick="document.getElementById('kgm').classList.remove('open')">괌 골프 가이드</a>
   <a class="sub" href="weather.html" onclick="document.getElementById('kgm').classList.remove('open')">└ 괌 날씨 · 베스트 시즌</a>
   <a class="sub" href="hotels.html" onclick="document.getElementById('kgm').classList.remove('open')">└ 골프 연계 호텔</a>
-  <a href="index.html#about" onclick="document.getElementById('kgm').classList.remove('open')">협회 소개</a>
-  <a href="index.html#qna" onclick="document.getElementById('kgm').classList.remove('open')">QnA</a>
+  <a href="about.html" onclick="document.getElementById('kgm').classList.remove('open')">협회 소개</a>
+  <a href="qna.html" onclick="document.getElementById('kgm').classList.remove('open')">QnA</a>
   <a href="#" onclick="document.getElementById('kgm').classList.remove('open')">예약확인</a>
   <a class="cta" href="/guamfree/">예약하기</a>
 </div>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>협회 소개 — 한국괌골프협회(KGGA)</title>
+<meta name="description" content="한국괌골프협회(KGGA)는 괌 현지 5개 골프장이 협력해 결성한 협회입니다. 협회 예약가, 괌 공항 KGGA 데스크, 공항↔호텔↔골프장 송영, 한국어 현지 지원을 제공합니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="한국괌골프협회 KGGA">
+<meta property="og:title" content="협회 소개 — 한국괌골프협회(KGGA)">
+<meta property="og:description" content="괌 현지 5개 골프장이 협력해 결성한 협회. 협회 예약가·공항 데스크·송영·한국어 현지 지원.">
+<meta property="og:url" content="https://kgga.co.kr/about/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SportsOrganization","name":"한국괌골프협회","alternateName":"KGGA","url":"https://kgga.co.kr","description":"괌 현지 5개 골프장이 협력해 결성한 협회. 한국 골퍼에게 협회 예약가로 티타임을 제공하고 공항 데스크·송영·한국어 현지 지원을 운영한다.","areaServed":"괌(Guam)","memberOf":[{"@type":"Organization","name":"Country Club of the Pacific"},{"@type":"Organization","name":"Sono Felice CC Guam Mangilao & Talofofo"},{"@type":"Organization","name":"Finest Guam Golf & Resort"},{"@type":"Organization","name":"Leopalace Resort Country Club"}]}
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A2E36; --ink-soft:#3C5A61; --lagoon:#16A2BC; --lagoon-deep:#0E7A90;
+    --sun:#EFB259; --mist:#EEF4F3; --card:#FFFFFF; --line:#DCE6E4; --line-2:#C9D8D6;
+    --turf:#2E7D5B; --turf-soft:#E4F0E9; --brass:#A8843C;
+    --display:"Fraunces","Pretendard",serif; --body:"Pretendard",-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--body);color:var(--ink);background:var(--mist);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+  .kg-bar{background:#0A2E36;color:#CFE0DE;font-size:12px}
+  .kg-bar .in{max-width:1120px;margin:0 auto;padding:0 24px;height:36px;display:flex;align-items:center;justify-content:space-between}
+  .kg-head{position:sticky;top:0;z-index:50;background:rgba(238,244,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid #DCE6E4}
+  .kg-nav{max-width:1120px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between}
+  .kg-brand{display:flex;align-items:center;gap:11px}
+  .kg-brand .s{width:38px;height:38px;border-radius:50%;border:1.5px solid #A8843C;display:grid;place-items:center;color:#A8843C;font-family:"Fraunces",serif;font-weight:600;font-size:11px}
+  .kg-brand b{font-family:"Fraunces",serif;font-weight:600;font-size:17px;color:#0A2E36;letter-spacing:.02em}
+  .kg-menu{display:flex;gap:4px;align-items:center}
+  .kg-menu a{padding:9px 13px;font-size:14px;font-weight:600;color:#3C5A61;border-radius:8px}
+  .kg-menu a:hover{background:#fff;color:#0A2E36}
+  .kg-menu a.on{color:#2E7D5B}
+  .kg-cta{background:#2E7D5B;color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:700}
+  .kg-cta:hover{background:#256748}
+  @media(max-width:760px){.kg-menu{display:none}}
+  .kgm-burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .kgm-burger span{width:24px;height:2px;background:#0A2E36;border-radius:2px}
+  @media(max-width:760px){.kgm-burger{display:flex}}
+  .kgm{display:none;position:fixed;inset:0;z-index:120;background:#EEF4F3;padding:20px;overflow:auto}
+  .kgm.open{display:block}
+  .kgm-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .kgm-top b{font-family:"Fraunces",serif;font-weight:600;color:#0A2E36;font-size:18px}
+  .kgm-x{background:none;border:0;font-size:26px;line-height:1;cursor:pointer;color:#0A2E36}
+  .kgm a{display:block;font-family:"Fraunces",serif;font-weight:600;font-size:20px;color:#0A2E36;padding:13px 4px;border-bottom:1px solid #DCE6E4}
+  .kgm a.sub{font-size:15.5px;color:#2E7D5B;padding-left:14px;font-family:"Pretendard",sans-serif}
+  .kgm a.cta{color:#2E7D5B}
+
+  /* hero */
+  .hh{background:linear-gradient(180deg,#FBFDFC,#F3F7F6);border-bottom:1px solid var(--line)}
+  .hh-in{max-width:1000px;margin:0 auto;padding:54px 24px 38px}
+  .eyebrow{font-family:var(--display);font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--turf);display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:24px;height:1.5px;background:var(--turf)}
+  .hh h1{font-family:var(--display);font-weight:500;font-size:clamp(27px,3.6vw,40px);line-height:1.16;margin:16px 0 0}
+  .hh h1 em{font-style:italic;color:var(--turf)}
+  .hh p{margin:14px 0 0;max-width:46em;font-size:15px;color:var(--ink-soft)}
+
+  section.blk{padding:44px 0}
+  .blk h2{font-family:var(--display);font-weight:600;font-size:22px;margin-bottom:6px}
+  .blk .sub{color:var(--ink-soft);font-size:14px;margin-bottom:20px}
+
+  .lead{font-size:15.5px;color:var(--ink);line-height:1.75}
+  .lead b{color:var(--turf)}
+
+  .acts{display:grid;grid-template-columns:1fr;gap:10px;margin-top:8px}
+  .acts li{list-style:none;display:flex;gap:11px;font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+  .acts li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--turf);margin-top:8px}
+
+  .offer{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:640px){.offer{grid-template-columns:1fr}}
+  .ocard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .ocard .ic{font-size:20px}
+  .ocard h3{font-family:var(--display);font-weight:600;font-size:16px;margin:10px 0 6px}
+  .ocard p{font-size:13.5px;color:var(--ink-soft);line-height:1.6}
+
+  .courses{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  @media(max-width:760px){.courses{grid-template-columns:repeat(2,1fr)}}
+  .cc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 14px;transition:.15s}
+  .cc:hover{border-color:var(--turf);transform:translateY(-2px)}
+  .cc .nm{font-family:var(--display);font-weight:600;font-size:14px;line-height:1.3}
+  .cc .mt{font-size:11.5px;color:var(--ink-soft);margin-top:5px}
+
+  .execs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(max-width:640px){.execs{grid-template-columns:1fr}}
+  .ex{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;gap:13px;align-items:flex-start}
+  .ex .av{flex:none;width:42px;height:42px;border-radius:50%;background:var(--turf-soft);color:var(--turf);display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:15px}
+  .ex .nm{font-weight:700;font-size:14.5px}
+  .ex .rl{font-size:12.5px;color:var(--turf);font-weight:600;margin-top:1px}
+  .ex .af{font-size:12px;color:var(--ink-soft);margin-top:4px;line-height:1.5}
+
+  .office{background:var(--ink);color:#fff;border-radius:16px;padding:26px 30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+  .office h3{font-family:var(--display);font-weight:500;font-size:18px}
+  .office .rows{margin-top:10px;font-size:13.5px;color:#CFE0DE;line-height:1.9}
+  .office .rows b{color:#fff}
+  .office .rows a{color:var(--sun)}
+  .office .cta{background:var(--sun);color:var(--ink);font-weight:700;font-size:15px;padding:13px 24px;border-radius:999px;white-space:nowrap}
+
+  .foot{margin:20px 0 60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  @media(max-width:720px){.hh-in{padding:40px 24px 30px}section.blk{padding:34px 0}}
+</style>
+</head>
+<body>
+<div class="kg-bar"><div class="in"><span>한국괌골프협회 · 괌 골프여행 공식 예약센터</span><span>한국어 현지지원 · 1234-5678</span></div></div>
+<header class="kg-head"><nav class="kg-nav">
+  <a class="kg-brand" href="index.html"><span class="s">KGGA</span><b>한국괌골프협회</b></a>
+  <div class="kg-menu">
+    <a href="index.html">홈</a>
+    <a href="golf.html">골프장</a>
+    <a href="index.html#guide">괌 골프 가이드</a>
+    <a href="about.html" class="on">협회 소개</a>
+    <a href="qna.html">QnA</a>
+    <a href="#">예약확인</a>
+    <a class="kg-cta" href="/guamfree/">예약하기</a>
+  </div>
+  <button class="kgm-burger" aria-label="메뉴" onclick="document.getElementById('kgm').classList.add('open')"><span></span><span></span><span></span></button>
+</nav></header>
+<div class="kgm" id="kgm">
+  <div class="kgm-top"><b>한국괌골프협회</b><button class="kgm-x" aria-label="닫기" onclick="document.getElementById('kgm').classList.remove('open')">✕</button></div>
+  <a href="index.html" onclick="document.getElementById('kgm').classList.remove('open')">홈</a>
+  <a href="index.html#courses" onclick="document.getElementById('kgm').classList.remove('open')">골프장</a>
+  <a class="sub" href="golf.html" onclick="document.getElementById('kgm').classList.remove('open')">└ 골프장 상세</a>
+  <a href="index.html#guide" onclick="document.getElementById('kgm').classList.remove('open')">괌 골프 가이드</a>
+  <a class="sub" href="weather.html" onclick="document.getElementById('kgm').classList.remove('open')">└ 괌 날씨 · 베스트 시즌</a>
+  <a class="sub" href="hotels.html" onclick="document.getElementById('kgm').classList.remove('open')">└ 골프 연계 호텔</a>
+  <a href="about.html" onclick="document.getElementById('kgm').classList.remove('open')">협회 소개</a>
+  <a href="qna.html" onclick="document.getElementById('kgm').classList.remove('open')">QnA</a>
+  <a href="#" onclick="document.getElementById('kgm').classList.remove('open')">예약확인</a>
+  <a class="cta" href="/guamfree/">예약하기</a>
+</div>
+
+<section class="hh"><div class="hh-in">
+  <p class="eyebrow">한국괌골프협회 · 협회 소개</p>
+  <h1>여행사가 아니라,<br><em>괌 골프의 협회</em>입니다</h1>
+  <p>한국괌골프협회(KGGA)는 괌 현지 5개 골프장이 협력해 결성한 협회입니다. 단순 중개가 아니라, 골프장 협력·현지 지원·픽업까지 협회가 직접 책임집니다.</p>
+</div></section>
+
+<div class="wrap">
+  <section class="blk">
+    <h2>KGGA는</h2>
+    <p class="lead">한국괌골프협회는 괌 지역 <b>5개 골프장이 협력</b>하여, 한국 시장을 타겟으로 괌 골프의 활성화와 홍보를 위해 결성되었습니다. 한국 골퍼에게 <b>협회 예약가</b>로 티타임을 제공하고, 예약부터 현지 라운딩까지 한국어로 함께합니다.</p>
+    <ul class="acts" style="margin-top:16px">
+      <li>한국 시장에 다양한 괌 골프 상품 공급</li>
+      <li>국내외 골프 관련 행사 참가 (박람회·트래블 마트 등)</li>
+      <li>한국 여행사와의 지속적인 교류 및 교육 활동</li>
+      <li>인플루언서·미디어를 통한 괌 골프 콘텐츠 홍보</li>
+    </ul>
+  </section>
+
+  <section class="blk">
+    <h2>협회가 직접 제공합니다</h2>
+    <div class="sub">여행사 중개와 다른 점 — 협회라서 가능한 것들.</div>
+    <div class="offer">
+      <div class="ocard"><div class="ic">🏷️</div><h3>협회 예약가</h3><p>정가가 아닌 협회 예약가로 안내합니다. 골프장과 직접 협력하기에 가능한 가격입니다.</p></div>
+      <div class="ocard"><div class="ic">🛎️</div><h3>괌 공항 KGGA 데스크</h3><p>괌 공항 내 협회 데스크를 운영합니다. 도착 순간부터 현지에서 응대합니다.</p></div>
+      <div class="ocard"><div class="ic">🚐</div><h3>공항↔호텔↔골프장 송영</h3><p>공항 픽드랍부터 골프장 왕복까지 이동을 협회가 지원합니다.</p></div>
+      <div class="ocard"><div class="ic">💬</div><h3>한국어 현지 지원</h3><p>여행업 15년 경력 담당자가 예약부터 라운딩까지 한국어로 함께합니다.</p></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h2>협력 골프장 5곳</h2>
+    <div class="sub">협회가 직접 협력하는 괌의 대표 코스입니다.</div>
+    <div class="courses">
+      <a class="cc" href="golf.html#ccp"><div class="nm">CCP</div><div class="mt">18홀 · 오션</div></a>
+      <a class="cc" href="golf.html#fineeast"><div class="nm">파인이스트</div><div class="mt">27홀 · 토너먼트</div></a>
+      <a class="cc" href="golf.html#leopalace"><div class="nm">레오팔레스</div><div class="mt">36홀 · 체류형</div></a>
+      <a class="cc" href="golf.html#mangilao"><div class="nm">소노 망길라오</div><div class="mt">18홀 · 오션</div></a>
+      <a class="cc" href="golf.html#talofofo"><div class="nm">소노 탈로포포</div><div class="mt">18홀 · 챌린지</div></a>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h2>KGGA 임원</h2>
+    <div class="sub">각 골프장·현지 파트너를 대표하는 임원으로 구성됩니다.</div>
+    <div class="execs">
+      <div class="ex"><div class="av">신</div><div><div class="nm">신정준 <span style="font-weight:500;color:var(--ink-soft)">대표</span></div><div class="rl">Sono Felice CC Guam Mangilao &amp; Talofofo</div><div class="af">J&amp;J Marketing</div></div></div>
+      <div class="ex"><div class="av">황</div><div><div class="nm">황현성 <span style="font-weight:500;color:var(--ink-soft)">부장</span></div><div class="rl">Country Club of the Pacific</div><div class="af">PHR Korea</div></div></div>
+      <div class="ex"><div class="av">정</div><div><div class="nm">정순일 <span style="font-weight:500;color:var(--ink-soft)">부사장</span></div><div class="rl">Finest Guam Golf &amp; Resort</div><div class="af">Tourlinks</div></div></div>
+      <div class="ex"><div class="av">이</div><div><div class="nm">이채한 <span style="font-weight:500;color:var(--ink-soft)">대표</span></div><div class="rl">Leopalace Resort Country Club</div><div class="af">Benefit Tour</div></div></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="office">
+      <div>
+        <h3>KGGA 한국운영사무국</h3>
+        <div class="rows"><b>J&amp;J Marketing</b> 제이앤제이마케팅<br>예약·수배 문의 <a href="mailto:resv@jnj-marketing.com">resv@jnj-marketing.com</a><br>전화 <a href="tel:0277778982">02-777-8982</a></div>
+      </div>
+      <a class="cta" href="/guamfree/">골프장 예약하기</a>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span>ⓒ 한국괌골프협회(KGGA) · 본 페이지는 개편 목업입니다.</span>
+    <span>임원·운영 정보는 KGGA 괌 골프 가이드북 기준입니다.</span>
+  </div>
+</div>
+</body>
+</html>
