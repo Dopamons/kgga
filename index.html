@@ -293,6 +293,30 @@ footer .fbrand p{color:#96AAAF;line-height:1.7;font-size:.82rem}
   .rv .q{margin-top:10px;font-size:.9rem;line-height:1.68;color:var(--ink,#0A2E36)}
   .rv .who{margin-top:13px;font-size:.79rem;color:var(--ink-soft,#3C5A61);font-weight:600}
   @media(max-width:760px){.reviews{grid-template-columns:1fr}}
+  /* 라운딩 지수 피처 밴드 */
+  .wxband{background:var(--ink);color:#DDE7E9}
+  .wxband .in{max-width:1120px;margin:0 auto;padding:44px 24px;display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center}
+  .wxband .ey{font-size:.72rem;font-weight:700;letter-spacing:.16em;color:var(--brass-soft,#D9BE86)}
+  .wxband h2{font-family:var(--fd,"Fraunces",serif);font-weight:500;font-size:1.7rem;color:#fff;margin-top:10px;line-height:1.35}
+  .wxband h2 em{font-style:italic;color:#8FE3C0}
+  .wxband p{font-size:.86rem;color:#AFC2C6;margin-top:10px;line-height:1.7}
+  .wxband .go{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:var(--sun,#EFB259);color:var(--ink,#0A2E36);font-weight:700;font-size:.9rem;border-radius:999px;padding:12px 22px;transition:transform .15s}
+  .wxband .go:hover{transform:translateY(-1px)}
+  .wxmini{background:#fff;color:var(--ink,#0A2E36);border-radius:18px;padding:22px 24px;box-shadow:0 18px 44px rgba(0,0,0,.25)}
+  .wxmini .top{display:flex;justify-content:space-between;align-items:baseline;font-size:.72rem;color:var(--ink-soft,#3C5A61)}
+  .wxmini .top .lv{color:#C0392B;font-weight:800;font-size:.64rem;letter-spacing:.1em}
+  .wxmini .now{display:flex;align-items:center;gap:14px;margin-top:10px}
+  .wxmini .t{font-family:var(--fd,"Fraunces",serif);font-size:2.1rem;font-weight:500}
+  .wxmini .vx{font-size:.8rem;color:var(--ink-soft,#3C5A61);line-height:1.5}
+  .wxmini .vx b{display:inline-block;background:var(--turf-soft,#E4F0E9);color:var(--green,#2E7D5B);border-radius:6px;padding:2px 10px;font-size:.78rem;margin-bottom:3px}
+  .wxmini .cc{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;border-top:1px solid var(--line,#DCE6E4);padding-top:13px}
+  .wxmini .cc span{font-size:.68rem;font-weight:700;border-radius:999px;padding:4px 10px;background:var(--mist,#EEF4F3);color:var(--ink-soft,#3C5A61)}
+  .wxmini .cc span i{font-style:normal;color:var(--green,#2E7D5B)}
+  .wxmini .cc span i.o{color:#9A7B2E} .wxmini .cc span i.a{color:#0E7A90}
+  @media(max-width:820px){.wxband .in{grid-template-columns:1fr;gap:24px;padding:34px 24px}}
+  .guide-grid.g3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:960px){.guide-grid.g3{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.guide-grid.g3{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -429,15 +453,35 @@ footer .fbrand p{color:#96AAAF;line-height:1.7;font-size:.82rem}
   </div>
 </div></section>
 
+<!-- KGGA 라운딩 지수 피처 밴드 (weather.html 연결) -->
+<div class="wxband" id="weather-feature"><div class="in">
+  <div>
+    <div class="ey">KGGA 라운딩 지수</div>
+    <h2>오늘 괌, <em>라운딩하기</em> 좋은 날일까요?</h2>
+    <p>한국괌골프협회가 골퍼를 위해 직접 개발·운영하는 골프 기상 서비스. 코스별 오늘 지수부터 16일 예보, 한두 달 전 예약을 위한 기간 통계까지 — 티오프 결정에 필요한 날씨만 골라 담았습니다.</p>
+    <a class="go" href="weather.html">괌 날씨 · 라운딩 지수 보기 →</a>
+  </div>
+  <div class="wxmini">
+    <div class="top"><span>GUAM · TUMON — 괌 현지 <span id="ixDate">오늘</span></span><span class="lv">● LIVE</span></div>
+    <div class="now">
+      <div class="t">29°</div>
+      <div class="vx"><b>오늘 라운딩 지수 · 최적</b><br>대체로 맑음 · 오전 양호, 오후 소나기 주의</div>
+    </div>
+    <div class="cc">
+      <span>CCP <i>최적</i></span><span>파인이스트 <i>최적</i></span><span>레오팔레스 <i class="o">무난</i></span><span>망길라오 <i class="a">오전권장</i></span><span>탈로포포 <i class="a">오전권장</i></span>
+    </div>
+  </div>
+</div></div>
+<script>(function(){try{var e=document.getElementById('ixDate');if(e)e.textContent=new Intl.DateTimeFormat('ko-KR',{timeZone:'Pacific/Guam',month:'numeric',day:'numeric',weekday:'short'}).format(new Date());}catch(x){}})();</script>
+
 <!-- 가이드 (괌 날씨 포함) -->
 <section class="blk alt" id="guide"><div class="wrap">
   <div class="shead"><div class="brass-rule"></div><h2>괌 골프 가이드</h2><p>처음 가는 괌 골프여행, 준비부터 예산·날씨까지 협회가 정리했습니다.</p></div>
-  <div class="guide-grid">
+  <div class="guide-grid g3">
     <div class="gcard"><div class="gk">Course Plan</div><h3>괌 골프여행 코스 짜기</h3><p>도착부터 라운딩·픽업까지 실패 없는 3박4일 표준 일정.</p><a class="more" href="#">가이드 읽기 →</a></div>
     <div class="gcard wx"><div class="gk">Hotels</div><h3>골프 연계 호텔</h3><p>투몬 인기 호텔 12곳과 PHR 계열 CCP 투숙 할인 안내.</p><a class="more" href="hotels.html">호텔 보기 →</a></div>
     <div class="gcard"><div class="gk">Cost</div><h3>괌 골프 비용 총정리</h3><p>그린피·카트·픽업·부대비용까지 실제 드는 돈을 투명하게.</p><a class="more" href="#">가이드 읽기 →</a></div>
-    <div class="gcard wx"><div class="gk">Weather</div><h3>괌 날씨 · 베스트 시즌</h3><p>라운딩 지수로 보는 오전·오후 티타임과 월별 골프 시즌.</p><a class="more" href="weather.html">날씨 보기 →</a></div>
-  </div>
+    </div>
 </div></section>
 
 <!-- 협회 소개 -->
