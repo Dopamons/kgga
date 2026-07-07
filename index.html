@@ -232,6 +232,26 @@ footer .fbrand p{color:#96AAAF;line-height:1.7;font-size:.82rem}
 .mobile-menu .mm-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .mobile-menu a.mm{display:block;font-family:var(--fd);font-weight:700;font-size:1.25rem;padding:14px 4px;border-bottom:1px solid var(--line)}
 .mm-close{background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--ink)}
+
+  /* ===== v2 CRO 개선 추가 ===== */
+  .hero-widx{display:inline-flex;align-items:center;gap:8px;margin:16px 0 0;padding:8px 15px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:.84rem;font-weight:600;backdrop-filter:blur(4px);transition:.15s}
+  .hero-widx:hover{background:rgba(255,255,255,.22)}
+  .hero-widx b{color:#8FE3C0}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+  .step{background:#fff;border:1px solid var(--line,#DCE6E4);border-radius:14px;padding:22px 24px;position:relative}
+  .step .sn{font-family:var(--fd,"Fraunces",serif);font-weight:700;color:var(--brass,#A8843C);font-size:.82rem;letter-spacing:.1em}
+  .step h3{font-size:1.04rem;margin:9px 0 6px}
+  .step p{font-size:.87rem;color:var(--ink-soft,#3C5A61);line-height:1.62}
+  .step .tm{display:inline-block;margin-top:12px;font-size:.75rem;font-weight:700;color:var(--green,#2E7D5B);background:var(--turf-soft,#E4F0E9);border-radius:999px;padding:4px 11px}
+  .step .arrow{position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--brass,#A8843C);font-size:1.1rem;z-index:2}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}.step .arrow{display:none}}
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rv{background:#fff;border:1px solid var(--line,#DCE6E4);border-radius:14px;padding:22px 24px}
+  .rv .stars{color:var(--brass,#A8843C);font-size:.85rem;letter-spacing:2px}
+  .rv .q{margin-top:10px;font-size:.9rem;line-height:1.68;color:var(--ink,#0A2E36)}
+  .rv .who{margin-top:13px;font-size:.79rem;color:var(--ink-soft,#3C5A61);font-weight:600}
+  @media(max-width:760px){.reviews{grid-template-columns:1fr}}
+  .mock-note2{margin-top:14px;font-size:.76rem;color:#8AA0A4}
 </style>
 </head>
 <body>
@@ -284,9 +304,10 @@ footer .fbrand p{color:#96AAAF;line-height:1.7;font-size:.82rem}
   <h1>괌 골프여행은<br><em>협회</em>에서 시작합니다</h1>
   <p class="lead">골프장 티타임부터 렌터카·공항 픽업까지, 한국괌골프협회가 괌 골프장 5곳을 직접 협력해 협회 예약가로 한 번에 예약해 드립니다.</p>
   <div class="hero-actions">
-    <a class="btn btn-primary btn-lg" href="#">골프장 바로 예약</a>
+    <a class="btn btn-primary btn-lg" href="#">협회 예약가로 티타임 잡기</a>
     <a class="btn btn-ghost btn-lg" href="#">내게 맞는 코스 무료 추천받기</a>
   </div>
+  <a class="hero-widx" href="weather.html">☀ 오늘 라운딩 지수 <b>최적</b> · 오전 라운딩 양호 →</a>
   <div class="hero-note">괌 골프장 5곳 · 협회 예약가 $105부터 · 공항↔호텔 픽업 포함 · 실시간 온라인 예약</div>
   <div class="photo-slot">◍ 히어로 배경: CCP 해안 티샷 실촬영 영상/사진 교체 예정</div>
 </div></div>
@@ -336,6 +357,17 @@ footer .fbrand p{color:#96AAAF;line-height:1.7;font-size:.82rem}
   <div class="tb"><div class="ti">◆</div><div><div class="th">한국어 현지 지원</div><div class="tp">공항↔호텔 픽업까지 안심</div></div></div>
 </div></div>
 
+<!-- 확정 프로세스 · VoC 결제·확정 불안(상담 43%) 대응 -->
+<section class="blk" id="process"><div class="wrap">
+  <div class="shead"><div class="brass-rule"></div><h2>예약하면, 이렇게 진행됩니다</h2><p>결제 후가 궁금하신가요? 티오프 확정까지의 과정을 미리 보여드립니다.</p></div>
+  <div class="steps">
+    <div class="step"><div class="sn">STEP 1</div><h3>온라인 예약 · 결제</h3><p>원하는 코스와 날짜, 티오프 시간대를 골라 결제합니다. 결제가 완료되면 즉시 접수 안내가 발송됩니다.</p><span class="tm">즉시 접수 안내</span><span class="arrow">→</span></div>
+    <div class="step"><div class="sn">STEP 2</div><h3>티타임 확정서 발송</h3><p>협회가 골프장과 티타임을 확정하고, 티오프 시간·픽업 일정이 담긴 확정서를 카카오톡·이메일로 보내드립니다.</p><span class="tm">영업일 24시간 내</span><span class="arrow">→</span></div>
+    <div class="step"><div class="sn">STEP 3</div><h3>괌 도착, 현지에서 응대</h3><p>괌 공항 KGGA 데스크에서 맞이하고, 공항↔호텔↔골프장 송영으로 라운딩 당일까지 함께합니다.</p><span class="tm">한국어 현지 지원</span></div>
+  </div>
+  <p class="mock-note2">◍ 확정 소요 시간(24시간)·발송 채널·접수 안내 문구는 실무 정책 확정 후 최종 교체.</p>
+</div></section>
+
 <!-- 취향 분기 (골프장 바로 앞) -->
 <section class="blk alt"><div class="wrap">
   <div class="shead"><div class="brass-rule"></div><h2>어떤 라운딩을 원하세요?</h2><p>아직 못 정하셨다면, 원하는 스타일을 고르면 딱 맞는 코스로 안내합니다.</p></div>
@@ -382,6 +414,17 @@ footer .fbrand p{color:#96AAAF;line-height:1.7;font-size:.82rem}
   <div class="about-photo"><span class="photo-slot" style="position:absolute;bottom:14px;left:18px;color:rgba(255,255,255,.6)">◍ 협회/골프장 협력 실촬영본 교체 예정</span></div>
 </div></div></section>
 
+<!-- 고객 후기 · 실제 후기 원문으로 교체 (AI 작성 후기 사용 금지) -->
+<section class="blk" id="reviews"><div class="wrap">
+  <div class="shead"><div class="brass-rule"></div><h2>먼저 다녀온 골퍼들의 이야기</h2><p>협회를 통해 라운딩한 고객들의 실제 후기입니다.</p></div>
+  <div class="reviews">
+    <div class="rv"><div class="stars">★★★★★</div><div class="q">“(실제 후기 원문 교체 슬롯 ① — 티타임 확정·안내가 정확했다는 경험 중심)”</div><div class="who">김OO · 2026년 O월 · CCP + 망길라오 3라운드</div></div>
+    <div class="rv"><div class="stars">★★★★★</div><div class="q">“(실제 후기 원문 교체 슬롯 ② — 공항 데스크·픽업 등 현지 지원 경험 중심)”</div><div class="who">박OO · 2026년 O월 · 레오팔레스 체류형</div></div>
+    <div class="rv"><div class="stars">★★★★★</div><div class="q">“(실제 후기 원문 교체 슬롯 ③ — 협회 예약가·재방문 의사 중심)”</div><div class="who">이OO · 2026년 O월 · 3색 골프 54홀</div></div>
+  </div>
+  <p class="mock-note2">◍ 카카오 상담 로그에서 게재 동의받은 실후기 원문으로 교체. 성명·시기·상품은 실예약 기준.</p>
+</div></section>
+
 <!-- QnA -->
 <section class="blk alt" id="qna"><div class="wrap">
   <div class="shead"><div class="brass-rule"></div><h2>QnA</h2><p>예약 전 가장 많이 묻는 질문들을 모았습니다.</p></div>
@@ -401,6 +444,22 @@ footer .fbrand p{color:#96AAAF;line-height:1.7;font-size:.82rem}
     <div class="faq">
       <button class="faq-q" type="button"><span class="faq-n">Q4</span><span class="faq-t">주니어 요금은 어떻게 되나요?</span><span class="faq-ic"></span></button>
       <div class="faq-a"><div class="inner">만 6~11세 주니어는 별도 요금이 적용됩니다. 예약 시 성인·주니어 인원을 선택하면 자동으로 계산되어 표시됩니다.</div></div>
+    </div>
+    <div class="faq">
+      <button class="faq-q" type="button"><span class="faq-n">Q5</span><span class="faq-t">예약하면 확정은 언제 되나요?</span><span class="faq-ic"></span></button>
+      <div class="faq-a"><div class="inner">결제가 완료되면 즉시 접수 안내가 발송되고, 협회가 골프장과 티타임을 확정한 뒤 <b>영업일 기준 24시간 내</b> 티오프 시간·픽업 일정이 담긴 확정서를 카카오톡·이메일로 보내드립니다.</div></div>
+    </div>
+    <div class="faq">
+      <button class="faq-q" type="button"><span class="faq-n">Q6</span><span class="faq-t">취소·환불 규정은 어떻게 되나요?</span><span class="faq-ic"></span></button>
+      <div class="faq-a"><div class="inner">골프장·상품별로 취소 가능 기한과 환불 비율이 다르며, 각 예약 화면에 명시되어 있습니다. 티타임 확정 전 취소는 전액 환불되며, 확정 후에는 라운딩일 기준 규정에 따라 처리됩니다.</div></div>
+    </div>
+    <div class="faq">
+      <button class="faq-q" type="button"><span class="faq-n">Q7</span><span class="faq-t">비가 와서 골프장이 클로즈되면 어떻게 되나요?</span><span class="faq-ic"></span></button>
+      <div class="faq-a"><div class="inner">골프장이 클로즈를 판정하면 규정에 따라 환불 또는 일정 변경을 지원합니다. 괌의 스콜성 소나기는 대부분 정상 진행되며, 애매한 날은 협회가 현지 상황을 확인해 미리 안내드립니다.</div></div>
+    </div>
+    <div class="faq">
+      <button class="faq-q" type="button"><span class="faq-n">Q8</span><span class="faq-t">결제는 어떤 방식으로 하나요?</span><span class="faq-ic"></span></button>
+      <div class="faq-a"><div class="inner">온라인 카드 결제를 지원합니다. 결제 과정에서 문의나 오류가 있으면 한국 사무국이 전화·카카오톡으로 한국어 응대하며, 이중 결제 여부 확인과 처리까지 책임집니다.</div></div>
     </div>
   </div>
 </div></section>
