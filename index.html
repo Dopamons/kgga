@@ -233,25 +233,66 @@ footer .fbrand p{color:#96AAAF;line-height:1.7;font-size:.82rem}
 .mobile-menu a.mm{display:block;font-family:var(--fd);font-weight:700;font-size:1.25rem;padding:14px 4px;border-bottom:1px solid var(--line)}
 .mm-close{background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--ink)}
 
-  /* ===== v2 CRO 개선 추가 ===== */
+  /* ===== v2 CRO 개선 (개선안 ② 실사 포토 결합) ===== */
   .hero-widx{display:inline-flex;align-items:center;gap:8px;margin:16px 0 0;padding:8px 15px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:.84rem;font-weight:600;backdrop-filter:blur(4px);transition:.15s}
   .hero-widx:hover{background:rgba(255,255,255,.22)}
   .hero-widx b{color:#8FE3C0}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
-  .step{background:#fff;border:1px solid var(--line,#DCE6E4);border-radius:14px;padding:22px 24px;position:relative}
-  .step .sn{font-family:var(--fd,"Fraunces",serif);font-weight:700;color:var(--brass,#A8843C);font-size:.82rem;letter-spacing:.1em}
-  .step h3{font-size:1.04rem;margin:9px 0 6px}
-  .step p{font-size:.87rem;color:var(--ink-soft,#3C5A61);line-height:1.62}
-  .step .tm{display:inline-block;margin-top:12px;font-size:.75rem;font-weight:700;color:var(--green,#2E7D5B);background:var(--turf-soft,#E4F0E9);border-radius:999px;padding:4px 11px}
-  .step .arrow{position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--brass,#A8843C);font-size:1.1rem;z-index:2}
-  @media(max-width:760px){.steps{grid-template-columns:1fr}.step .arrow{display:none}}
+  .mock-note2{margin-top:12px;font-size:.76rem;color:#8AA0A4;text-align:center}
+  /* 확정 프로세스 — 안 Ⅲ 좌제목·우플로우 */
+  .proc3{background:var(--mist,#EEF4F3);border-top:1px solid var(--line,#DCE6E4);border-bottom:1px solid var(--line,#DCE6E4);padding:38px 0}
+  .proc3 .grid{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:center}
+  .proc3 .lh .brass-rule{margin:0 0 12px}
+  .proc3 .lh h2{font-family:var(--fd,"Fraunces",serif);font-weight:500;font-size:1.56rem;line-height:1.3;text-align:left}
+  .proc3 .lh h2 em{font-style:italic;color:var(--green,#2E7D5B)}
+  .proc3 .lh p{font-size:.82rem;color:var(--ink-soft,#3C5A61);margin-top:10px}
+  .proc3 .flow{display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr;align-items:stretch}
+  .proc3 .st{background:#fff;border:1px solid var(--line,#DCE6E4);border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
+  .proc3 .st:hover{border-color:var(--brass,#A8843C);box-shadow:0 8px 20px rgba(10,46,54,.08);transform:translateY(-2px)}
+  .proc3 .st:hover .k{letter-spacing:.22em}
+  .proc3 .k{transition:letter-spacing .25s ease}
+  @media (prefers-reduced-motion: reduce){.proc3 .st,.proc3 .k{transition:none}.proc3 .st:hover{transform:none}}
+  .proc3 .k{font-size:.66rem;font-weight:700;letter-spacing:.16em;color:var(--brass,#A8843C)}
+  .proc3 .st h3{font-family:var(--fd,"Fraunces",serif);font-weight:600;font-size:.97rem;margin-top:6px}
+  .proc3 .st p{font-size:.77rem;color:var(--ink-soft,#3C5A61);margin-top:5px;line-height:1.6}
+  .proc3 .tm{display:inline-block;margin-top:auto;padding-top:8px;font-size:.71rem;font-weight:700;color:var(--green,#2E7D5B)}
+  .proc3 .ar{display:grid;place-items:center;color:var(--brass,#A8843C);font-size:.9rem}
+  @media(max-width:900px){.proc3 .grid{grid-template-columns:1fr;gap:20px}.proc3 .lh h2{text-align:center}.proc3 .lh .brass-rule{margin:0 auto 12px}.proc3 .lh p{text-align:center}}
+  @media(max-width:760px){.proc3 .flow{grid-template-columns:1fr}.proc3 .ar{transform:rotate(90deg);padding:4px 0}}
+  section.blk.sec-v2{padding:46px 0}
+  @media(max-width:720px){section.blk.sec-v2{padding:34px 0}}
+  .sec-v2 .shead{margin-bottom:22px}
+  /* 확정 프로세스 — 사진(데스크·송영) + 3단계 */
+  .pflow{display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;align-items:stretch;background:#fff;border:1px solid var(--line,#DCE6E4);border-radius:18px;box-shadow:0 2px 10px rgba(10,46,54,.04);padding:30px 34px}
+  .pf{text-align:center;padding:0 6px;display:flex;flex-direction:column;align-items:center}
+  .pf .num{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--brass,#A8843C);color:var(--brass,#A8843C);font-family:var(--fd,"Fraunces",serif);font-size:1.02rem;display:grid;place-items:center}
+  .pf h3{font-family:var(--fd,"Fraunces",serif);font-weight:600;font-size:1.02rem;margin-top:11px}
+  .pf p{font-size:.82rem;color:var(--ink-soft,#3C5A61);line-height:1.62;margin-top:6px;max-width:24em}
+  .pf .tm{display:inline-block;margin-top:auto;padding-top:11px;font-size:.74rem;font-weight:700;color:var(--green,#2E7D5B)}
+  .pfa{display:grid;place-items:center;color:var(--brass,#A8843C);font-size:1.25rem;padding-bottom:34px}
+  @media(max-width:760px){.pflow{grid-template-columns:1fr;padding:22px 22px}.pf{padding:8px 0}.pfa{padding:2px 0;transform:rotate(90deg)}}
+  /* 취향 분기 — 포토 카드 */
+  .t2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  .t2 .card{background:#fff;border:1px solid var(--line,#DCE6E4);border-radius:16px;overflow:hidden;transition:transform .25s,box-shadow .25s;cursor:pointer}
+  .t2 .card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,46,54,.09)}
+  .t2 .img{height:118px;position:relative;background-size:cover;background-position:center}
+  .t2 .img .cr{position:absolute;left:10px;bottom:8px;font-size:.62rem;color:rgba(255,255,255,.85);background:rgba(10,46,54,.45);border-radius:4px;padding:2px 7px;backdrop-filter:blur(3px)}
+  .t2 .i1{background-image:linear-gradient(150deg,#155E70,#0A2E36)}
+  .t2 .i2{background-image:linear-gradient(150deg,#2E7D5B,#14382A)}
+  .t2 .i3{background-image:linear-gradient(150deg,#A8843C,#5C4718)}
+  .t2 .body{padding:17px 21px 19px}
+  .t2 h3{font-family:var(--fd,"Fraunces",serif);font-weight:500;font-size:1.1rem}
+  .t2 h3 em{font-style:italic;color:var(--green,#2E7D5B)}
+  .t2 .body p{font-size:.8rem;color:var(--ink-soft,#3C5A61);margin-top:5px}
+  .t2 .to{display:inline-block;margin-top:10px;font-size:.78rem;font-weight:700;color:var(--brass,#A8843C)}
+  .t2 .card:hover .to{color:var(--green,#2E7D5B)}
+  @media(max-width:760px){.t2{grid-template-columns:1fr}}
+  /* 후기 */
   .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .rv{background:#fff;border:1px solid var(--line,#DCE6E4);border-radius:14px;padding:22px 24px}
   .rv .stars{color:var(--brass,#A8843C);font-size:.85rem;letter-spacing:2px}
   .rv .q{margin-top:10px;font-size:.9rem;line-height:1.68;color:var(--ink,#0A2E36)}
   .rv .who{margin-top:13px;font-size:.79rem;color:var(--ink-soft,#3C5A61);font-weight:600}
   @media(max-width:760px){.reviews{grid-template-columns:1fr}}
-  .mock-note2{margin-top:14px;font-size:.76rem;color:#8AA0A4}
 </style>
 </head>
 <body>
@@ -357,26 +398,23 @@ footer .fbrand p{color:#96AAAF;line-height:1.7;font-size:.82rem}
   <div class="tb"><div class="ti">◆</div><div><div class="th">한국어 현지 지원</div><div class="tp">공항↔호텔 픽업까지 안심</div></div></div>
 </div></div>
 
-<!-- 확정 프로세스 · VoC 결제·확정 불안(상담 43%) 대응 -->
-<section class="blk" id="process"><div class="wrap">
-  <div class="shead"><div class="brass-rule"></div><h2>예약하면, 이렇게 진행됩니다</h2><p>결제 후가 궁금하신가요? 티오프 확정까지의 과정을 미리 보여드립니다.</p></div>
-  <div class="steps">
-    <div class="step"><div class="sn">STEP 1</div><h3>온라인 예약 · 결제</h3><p>원하는 코스와 날짜, 티오프 시간대를 골라 결제합니다. 결제가 완료되면 즉시 접수 안내가 발송됩니다.</p><span class="tm">즉시 접수 안내</span><span class="arrow">→</span></div>
-    <div class="step"><div class="sn">STEP 2</div><h3>티타임 확정서 발송</h3><p>협회가 골프장과 티타임을 확정하고, 티오프 시간·픽업 일정이 담긴 확정서를 카카오톡·이메일로 보내드립니다.</p><span class="tm">영업일 24시간 내</span><span class="arrow">→</span></div>
-    <div class="step"><div class="sn">STEP 3</div><h3>괌 도착, 현지에서 응대</h3><p>괌 공항 KGGA 데스크에서 맞이하고, 공항↔호텔↔골프장 송영으로 라운딩 당일까지 함께합니다.</p><span class="tm">한국어 현지 지원</span></div>
+<!-- 확정 프로세스 · 안 Ⅲ 좌제목·우플로우 (VoC 결제·확정 불안 대응) -->
+<div class="proc3" id="process"><div class="wrap">
+  <div class="grid">
+    <div class="lh">
+      <div class="brass-rule"></div>
+      <h2>티오프<br><em>확정</em> 안내</h2>
+      <p>결제부터 현지 응대까지, 협회가 세 단계로 안내합니다.</p>
+    </div>
+    <div class="flow">
+      <div class="st"><div class="k">STEP 1</div><h3>온라인 예약 · 결제</h3><p>코스·날짜·티오프 시간대를 골라 결제합니다.</p><span class="tm">즉시 접수 안내</span></div>
+      <div class="ar">▸</div>
+      <div class="st"><div class="k">STEP 2</div><h3>현지 골프장 확정</h3><p>협회가 골프장과 직접 소통해 확정하고, 확정서를 카카오톡·이메일로 보내드립니다.</p><span class="tm">영업일 24시간 내</span></div>
+      <div class="ar">▸</div>
+      <div class="st"><div class="k">STEP 3</div><h3>괌 도착, 현지 응대</h3><p>공항 KGGA 데스크와 송영으로 라운딩 당일까지 함께합니다.</p><span class="tm">한국어 현지 지원</span></div>
+    </div>
   </div>
-  <p class="mock-note2">◍ 확정 소요 시간(24시간)·발송 채널·접수 안내 문구는 실무 정책 확정 후 최종 교체.</p>
-</div></section>
-
-<!-- 취향 분기 (골프장 바로 앞) -->
-<section class="blk alt"><div class="wrap">
-  <div class="shead"><div class="brass-rule"></div><h2>어떤 라운딩을 원하세요?</h2><p>아직 못 정하셨다면, 원하는 스타일을 고르면 딱 맞는 코스로 안내합니다.</p></div>
-  <div class="taste">
-    <div class="tcard" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})"><div class="tt">🌊</div><h3>바다 보며 치고 싶다</h3><p>오션뷰 홈이 펼쳐지는 절경 코스에서, 파도 소리와 함께 라운딩.</p><div class="courses">추천 · CCP · 소노 망길라오 →</div></div>
-    <div class="tcard" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})"><div class="tt">🏨</div><h3>편하게 머물며 치고 싶다</h3><p>숙소 앞이 1번홀. 골프텔에 묵으며 이동을 최소화하는 체류형.</p><div class="courses">추천 · 레오팔레스 · 파인이스트 →</div></div>
-    <div class="tcard" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})"><div class="tt">⛳</div><h3>합리적으로 많이 치고 싶다</h3><p>가성비 중심 구성으로 하루 두 라운드까지 넉넉하게.</p><div class="courses">추천 · CCP · 탈로포포 조합 →</div></div>
-  </div>
-</div></section>
+</div></div>
 
 <!-- 골프장 단품 -->
 <section class="blk" id="courses"><div class="wrap">
